@@ -20,7 +20,7 @@ resource "aws_instance" "blog" {
   ami           = data.aws_ami.app_ami.id
   instance_type = var.instance_type
 
-  vpc_security_group_ids = [aws_security_group_rule.id]
+  vpc_security_group_ids = [aws_security_group.blog.id]
 
   tags = {
     Name = "UhoroWaku-tena_Muno"
@@ -54,7 +54,7 @@ resource "aws_security_group_rule" "blog_https_in" {
   security_group_id = aws_security_group.blog.id
 }
 resource "aws_security_group_rule" "blog_everything_out" {
-  type        = "eggress"
+  type        = "egress"
   from_port   = 0
   to_port     = 0
   protocol    = "-1"
