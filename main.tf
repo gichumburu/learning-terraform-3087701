@@ -51,8 +51,8 @@ module "blog_asg" {
   version = "6.10.0"
   
   name = "blog"
-  min_size = 1
-  max_size = 2
+  min_size = 3
+  max_size = 4
 
   vpc_zone_identifier = module.blog_vpc.public_subnets
   target_group_arns = module.blog_alb.target_group_arns
