@@ -7,5 +7,5 @@ module "qa" {
   }
 
   asg_max_size = 3
-  asg_min_size = 1
+  asg_min_size = 2
 }
